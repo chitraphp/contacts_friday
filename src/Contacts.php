@@ -1,11 +1,11 @@
 <?php
 class Contact
 {
-    private $address;
-    privaphonephone;
+    private $name;
+    private $phone;
     private $address;
 
-    function __costruct($name, $phone,$address)
+    function __construct($name, $phone,$address)
     {
         $this->name = $name;
         $this->phone = $phone;
@@ -20,7 +20,7 @@ class Contact
 
     function setPhone($new_phone)
     {
-        $int_phone = (integer) $new_phone;
+        $int_phone = $new_phone;
         $this->phone = $int_phone;
     }
 
@@ -46,10 +46,15 @@ class Contact
 
     function save()
     {
-        array_push($_SESSION['contact_list'],$this);
+        array_push($_SESSION['contacts_list'],$this);
     }
 
-    function deleteAll()
+    static function getAll()
+    {
+        return $_SESSION['contacts_list'];
+    }
+
+    static function deleteAll()
     {
         $_SESSION['contact_list'] = array();
     }
