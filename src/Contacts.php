@@ -1,5 +1,5 @@
 <?php
-class Contact
+class Contacts
 {
     private $name;
     private $phone;
@@ -60,4 +60,5 @@ class Contact
     }
 
 }
+
 ?>
